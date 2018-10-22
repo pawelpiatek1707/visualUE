@@ -49,7 +49,24 @@ namespace obiect1
                 
 
             }
-            Console.WriteLine("srednia ocen to: " + diary.average());
+            float average = diary.average();
+            Console.WriteLine("srednia ocen to: " + average);
+            if(average >=2.0f && average <= 4.0f)
+            {
+                Console.WriteLine("Wysokosc stypendium: 0,00zl");
+            }
+            else if (average >= 4.01f && average <= 4.60f)
+            {
+                Console.WriteLine("Wysokosc stypendium: 250,00zl");
+            }
+            else if (average >= 4.61f && average <= 4.80f)
+            {
+                Console.WriteLine("Wysokosc stypendium: 400,00zl");
+            }
+            else if (average >= 4.81f && average <= 5.00f)
+            {
+                Console.WriteLine("Wysokosc stypendium: 550,00zl");
+            }
             Console.WriteLine("najwyzsza ocena to: " + diary.takeMax());
             Console.WriteLine("najnizsza ocena to: " + diary.takeMin());
             Console.ReadKey();
