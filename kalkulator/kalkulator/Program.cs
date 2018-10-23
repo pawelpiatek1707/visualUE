@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//ogarnac wyjatki 
 namespace kalkulator
 {
     class Program
@@ -23,7 +23,13 @@ namespace kalkulator
                 Console.WriteLine("Wynik mnożenia: " + (a * b));
             }
             else if (choice == "/")
-            {
+            {   
+                if(b==0)
+                    {
+                    Console.WriteLine("Nie mozna dzielic przez 0 ");
+                    
+                    }
+                else
                 Console.WriteLine("Wynik dzielenia: " + (a / b));
             }
            

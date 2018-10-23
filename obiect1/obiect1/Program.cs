@@ -23,7 +23,7 @@ namespace obiect1
 
             for(; ; )
             {
-                Console.WriteLine("podaj ocene z zakresu od 1 do 6 jeżeli będziesz chciał skończyć wprowadzanie ocen to wpisz 11 ");
+                Console.WriteLine("podaj ocene z zakresu od 2 do 5 jeżeli będziesz chciał skończyć wprowadzanie ocen to wpisz 11 ");
 
 
                 float grade;
@@ -37,7 +37,7 @@ namespace obiect1
                 }
                 if(reasult)
                 {
-                    if (grade > 0 && grade <= 5)
+                    if (grade > 1 && grade <= 5)
                     {
                         diary.addGrader(grade);
                     }
