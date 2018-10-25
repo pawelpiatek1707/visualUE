@@ -10,6 +10,19 @@ namespace Zadanie_3._9
     {
         static void Main(string[] args)
         {
+            /*
+             Console.WriteLine("Wprowadz liczbe wierszy: ");
+            int n = int.Parse(Console.ReadLine());
+            for(int i =1 ; i <= n; i
+            {
+                for(int j = 1; j <= n; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+             */
             //Menu-------------------------------
             
             Console.WriteLine("Opcje 1: ");
@@ -47,19 +60,48 @@ namespace Zadanie_3._9
                     {
                         Console.Clear();
                         Console.WriteLine("Podaj liczbe wierszy: ");
-                        int line = int.Parse(Console.ReadLine());
-                        string[,] arr = new string[line,line];
-                        string star = "*";
-                        for(int i = 0; i < line-1; i++)
+                        int n = int.Parse(Console.ReadLine());
+                        string word = "";
+                        for(int i =1 ; i <= n; i++)
                         {
-                            for(int j=0; j< line-1; j++)
+                            word = word + "*";
+                            Console.WriteLine(word);
+                            
+                            //Console.Write("*");
+                        }
+}                   break;
+                case 3:
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Podaj liczbe wierszy: ");
+                        int n = int.Parse(Console.ReadLine());
+                        for(int i =1 ; i <=n; i++)
+                        {
+                            for(int j = n; j <= 1; j--)
                             {
-                                Console.WriteLine(arr[j, i] = star); 
+                            Console.Write("*");
                             }
                             Console.WriteLine();
+                            //Console.Write("*");
                         }
 
                         break;
+                    }
+                    case 2:
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Podaj liczbe wierszy: ");
+                        int n = int.Parse(Console.ReadLine());
+                         for(int i =1 ; i <= n; i++)
+                        {
+                            for(int j = 1; j <= n-i; j++)
+                            {
+                            Console.Write("*");
+                            }
+                            Console.WriteLine();
+                            //Console.Write("*");
+                        }
+                       break;
                     }
             }
             Console.ReadKey(); 
