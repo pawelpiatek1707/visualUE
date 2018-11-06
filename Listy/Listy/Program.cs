@@ -22,6 +22,17 @@ namespace Listy
                 }
                 else
                 autorzy.Add(nazwa);
+                Console.WriteLine("Lista po dodaniu dodatkowych elementów");
+                Console.WriteLine();
+                Console.WriteLine("Wyswietlic ponownie zmodyfikowana tablice? tak/nie");
+                string taknie = Console.ReadLine();
+                if (taknie == "tak")
+                    Console.Clear();
+                foreach (string x in autorzy)
+                {
+                    Console.WriteLine(x);
+
+                }
             }
         }
         static void usun(List<string> autorzy)
@@ -75,17 +86,7 @@ namespace Listy
                         
                         dodaj(autorzy);
                         Console.WriteLine("-----------");
-                        Console.WriteLine("Lista po dodaniu dodatkowych elementów");
-                        Console.WriteLine();
-                        Console.WriteLine("Wyswietlic ponownie zmodyfikowana tablice? tak/nie");
-                        string taknie = Console.ReadLine();
-                        if (taknie == "tak")
-                            Console.Clear();
-                            foreach (string x in autorzy)
-                            {
-                                Console.WriteLine(x);
-                                
-                            }
+                       
                         
                             break;
                         
