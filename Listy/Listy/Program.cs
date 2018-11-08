@@ -50,15 +50,18 @@ namespace Listy
         static void Main(string[] args)
         {
             List<string> autorzy = new List<string>();
-           
+           Console.WriteLine("Dodaj nazwiska 4 autorów: ");
+            Console.WriteLine("------------------------");
             string autor;
             for(int i = 0; i < 4; i++)
             {
-                Console.WriteLine("Podaj autorów książek ");
+                Console.Write("Podaj autorów książek: ");
                 autor = Console.ReadLine();
                 autorzy.Add(autor);
             }
+            
             Console.WriteLine("------------------");
+            Console.Clear();
             Console.WriteLine("Lista autorow: ");
             foreach(string a in autorzy)
             {
@@ -71,14 +74,24 @@ namespace Listy
             Console.WriteLine("1. Sprawdzanie czy dane nazwisko jest na liście: ");
             Console.WriteLine("2. Dodaj kolejnych autorów: ");
             Console.WriteLine("3. Usun autorad: ");
+            Console.WriteLine("4. Zakończ program: ");
+            
             int wybor = int.Parse(Console.ReadLine());
             switch (wybor)
             {
                 
                 case 1:
                     {
+                        Console.WriteLine("Podaj nazwisko autora: ");
                         string szuk = Console.ReadLine();
-                        Console.WriteLine(autorzy.Exists(i => i == szuk)); 
+                        if(autorzy.Exists(i => i == szuk)) 
+                            {
+                            Console.WriteLine("Autor znajduje sie na liście: ");
+                            }
+                        else
+                            {
+                            Console.WriteLine("Autora nie ma na liście");
+                            }
                         break;
                     }
                 case 2:
@@ -103,6 +116,10 @@ namespace Listy
                             Console.WriteLine(x);
 
                         }
+                        break;
+                    }
+                    case 4:
+                    {
                         break;
                     }
 
