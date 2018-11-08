@@ -47,6 +47,10 @@ namespace Listy
                 Console.WriteLine("Autor nie ma na liscie:");
 
         }
+        static void usunWszystko(List<string> autorzy)
+        {
+            autorzy.Clear();
+        }
         static void Main(string[] args)
         {
             List<string> autorzy = new List<string>();
@@ -71,12 +75,15 @@ namespace Listy
             Console.WriteLine("--------------");
             Console.WriteLine("Pojemność listy: "+autorzy.Count());
             Console.WriteLine("---------------");
+            int wybor;
+            do{
             Console.WriteLine("1. Sprawdzanie czy dane nazwisko jest na liście: ");
             Console.WriteLine("2. Dodaj kolejnych autorów: ");
-            Console.WriteLine("3. Usun autorad: ");
-            Console.WriteLine("4. Zakończ program: ");
+            Console.WriteLine("3. Usun autora: ");
+            Console.WriteLine("4. Usun całą zawartość listy: ");
+            Console.WriteLine("5. Zakończ program: ");
             
-            int wybor = int.Parse(Console.ReadLine());
+             wybor = int.Parse(Console.ReadLine());
             switch (wybor)
             {
                 
@@ -118,12 +125,15 @@ namespace Listy
                         }
                         break;
                     }
-                    case 4:
+               case 4:
                     {
-                        break;
+                            usunWszystko(autorzy);
+                            break;
                     }
+                    
 
             }
+                }while(wybor!=5);
             Console.ReadKey();
         }
     }
