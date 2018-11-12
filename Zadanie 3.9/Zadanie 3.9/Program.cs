@@ -69,21 +69,20 @@ namespace Zadanie_3._9
                             
                             //Console.Write("*");
                         }
-}                   break;
+                        break;
+                    }                   
                 case 3:
                     {
                         Console.Clear();
                         Console.WriteLine("Podaj liczbe wierszy: ");
                         int n = int.Parse(Console.ReadLine());
-                        for(int i =1 ; i <=n; i++)
-                        {
-                            for(int j = n; j <= 1; j--)
+                        string word1 = "";
+                       for(int i = n-1;i>0;i--)
                             {
-                            Console.Write("*");
+                            word1 = word1+"*";
+                            Console.WriteLine(word1);
                             }
-                            Console.WriteLine();
-                            //Console.Write("*");
-                        }
+                                                                        
 
                         break;
                     }
