@@ -28,6 +28,7 @@ namespace Zadanie_14._4
         static void Main(string[] args)
         {
             string path = "D:\\Intel\\gitVisual\\Zadanie_14.1\\Katalog_Zadanie\\Nowy1.txt";
+            string path2 = "D:\\Intel\\gitVisual\\Zadanie_14.1\\Katalog_Zadanie\\Nowy2.txt";
             FileInfo fi = new FileInfo(path);
             if (!File.Exists(path))
             {
@@ -47,6 +48,17 @@ namespace Zadanie_14._4
                 Console.Write("Odczytywanie zawartości pliku: ");
                 StreamReader str1 = new StreamReader(path);
                 Read(str1);
+                if(!File.Exists(path2))
+                {
+                    File.Copy(path,path2);
+                    Console.WriteLine("Skopiowano plik");
+
+                }
+                else
+                 {
+                    Console.WriteLine("Pllik juz itnieje");
+                 }
+                //usuwanie pliku File.Delete(path)
             }
             Console.ReadKey();
         }
