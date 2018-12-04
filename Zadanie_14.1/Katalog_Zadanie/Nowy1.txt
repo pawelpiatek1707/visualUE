@@ -1,0 +1,2 @@
+To jest tekst przesyłany z programu Visual Studio do pliku tekstowego
+To jest tekst przesyłany z programu Visual Studio do pliku tekstowego
