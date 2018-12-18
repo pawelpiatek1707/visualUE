@@ -16,24 +16,7 @@ namespace Zadanie_15._2
         private const float extra_price = 0.05f;
         
 
-        //public void Add(string book_title1, string book_author1, int pages1, int chapters1, float price1)
-        //{
-        //    Console.Write("Podaj tytuł: ");
-        //    book_title1 = Console.ReadLine();
-        //    Console.Write("Podaj autora: ");
-        //    book_author1 = Console.ReadLine();
-        //    Console.Write("Podaj ilość stron: ");
-        //    pages1 = int.Parse(Console.ReadLine());
-        //    Console.Write("Podaj ilość rozdziałów: ");
-        //    chapters1 = int.Parse(Console.ReadLine());
-        //    do
-        //    {
-        //        Console.Write("Podaj cenę: ");
-        //        price1 = float.Parse(Console.ReadLine());
-        //    }
-        //    while (price1 < 0);
-            
-        //}
+        
         public void Price()
         {
             float price = this.price;
@@ -52,11 +35,11 @@ namespace Zadanie_15._2
         {
             Console.WriteLine("Zawartość obiektu");
             Console.WriteLine("---------------------");
-            Console.WriteLine("Tytuł: "+ book_title);
-            Console.WriteLine("Autor: "+ book_author);
-            Console.WriteLine("Liczba stron: "+ pages);
-            Console.WriteLine("Liczba rozdziałów: "+ chapters);
-            Console.WriteLine("Cena: "+ price);
+            Console.WriteLine("Tytuł: "+ this.book_title);
+            Console.WriteLine("Autor: "+ this.book_author);
+            Console.WriteLine("Liczba stron: "+ this.pages);
+            Console.WriteLine("Liczba rozdziałów: "+ this.chapters);
+            Console.WriteLine("Cena: "+ this.price);
         }
         public Book(string book_title1,string book_author1, int pages1,int chapters1, float price1)
         {
