@@ -8,48 +8,37 @@ namespace Zadanie_17._1
 {
     class Macierz
     {
-        public int wiersz1;
-        
-        
-
-
+        public int rozmiar;
         public int[,] macierzA;
 
         Random randA = new Random();
-        public void Uzupelnij(int [,]macierz1, Random rand)
+        public void Uzupelnij( Random rand)
         {
-            for (int i = 0; i < macierz1.GetLength(0); i++)
+            for (int i = 0; i < macierzA.GetLength(0); i++)
             {
-                for (int j = 0; j < macierz1.GetLength(0); j++)
+                for (int j = 0; j < macierzA.GetLength(0); j++)
                 {
-                    macierz1[i, j] = rand.Next(1, 20);
-
+                    macierzA[i, j] = rand.Next(1, 20);
                 }
             }
         }
-        public void Pokaz(int[,]macierz1)
+
+        public void Pokaz()
         {
-            for (int i = 0; i < macierz1.GetLength(0); i++)
+            for (int i = 0; i < macierzA.GetLength(0); i++)
             {
-                for (int j = 0; j < macierz1.GetLength(0); j++)
+                for (int j = 0; j < macierzA.GetLength(0); j++)
                 {
-                    Console.Write(macierz1[i, j] + " ");
+                    Console.Write(macierzA[i, j] + " ");
                 }
                 Console.WriteLine();
             }
         }
 
-        public Macierz(int wierszPierwszy  )
+        public Macierz(int wymiar)
         {
-            wiersz1 = wierszPierwszy;
-           
-            
-            macierzA = new int[wiersz1, wiersz1];
-            
-
-        }
-
-       
-        
+            rozmiar = wymiar; 
+            macierzA = new int[rozmiar, rozmiar];
+        } 
     }
 }
