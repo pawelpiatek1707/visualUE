@@ -20,8 +20,8 @@ namespace Zajecia_26._02._19
             //Kwadrat k1 = new Kwadrat(10, ConsoleColor.Red);
             //k1.RysujKwadrat();
             //Licznik l1 = new Licznik(333, 345, 654);
-            //l1.Wyswietl();
             //l1.Zuzycie();
+            //l1.Wyswietl();
 
 
             DateTime d1 = new DateTime(1998, 3, 12);
