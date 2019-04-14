@@ -255,10 +255,31 @@ namespace Zadania
     {
         public string producent;
         public string model;
-        public string płytaGlowna;
+        public string plutaGlowna;
         public string procesor;
         public string kartaGraficzna;
         public string dyskTwardy;
+
+        public Komputer(string producent, string model, string plytaGlowna,string procesor, string kartaGraficzna,string dyskTwardy)
+        {
+            this.producent = producent;
+            this.model = model;
+            this.plutaGlowna = plytaGlowna;
+            this.procesor = procesor;
+            this.kartaGraficzna = kartaGraficzna;
+            this.dyskTwardy = dyskTwardy;
+
+        }
+
+        public virtual void Info()
+        {
+            Console.WriteLine("Producent: "+this.producent);
+            Console.WriteLine("Model: "+this.model);
+            Console.WriteLine("Płyta główna: "+this.plutaGlowna);
+            Console.WriteLine("Procesor: "+this.procesor);
+            Console.WriteLine("Karta graficzna: "+this.kartaGraficzna);
+            Console.WriteLine("Dysk twardy: "+this.dyskTwardy);
+        }
 
     }
     class KomputerPrzenosny:Komputer
@@ -266,6 +287,117 @@ namespace Zadania
         public double waga;
         public string bateria;
         public bool bluetooth;
+
+        public KomputerPrzenosny(string producent, string model, string plytaGlowna, string procesor, string kartaGraficzna, string dyskTwardy, double waga,string bateria,bool bluetooth):base( producent,  model,  plytaGlowna,  procesor,  kartaGraficzna,  dyskTwardy)
+        {
+            this.producent = producent;
+            this.model = model;
+            this.plutaGlowna = plytaGlowna;
+            this.procesor = procesor;
+            this.kartaGraficzna = kartaGraficzna;
+            this.dyskTwardy = dyskTwardy;
+            this.waga = waga;
+            this.bateria = bateria;
+            this.bluetooth = bluetooth;
+
+        }
+
+        public override void Info()
+        {
+            base.Info();
+            Console.WriteLine("Waga: "+this.waga);
+            Console.WriteLine("Bateria: "+this.bateria);
+            Console.WriteLine("Bluetooth: "+this.bluetooth);
+        }
+
+
+    }
+    //Zadanie 7
+    class PracownikZadanie7
+    {
+        public double pensja;
+        public const double kwota = 1000;
+
+        public virtual void Wyplata()
+        {
+            double wyplata = this.pensja * 4 - kwota;
+            Console.WriteLine("Pensja podstawowa dla kazdego pracownika: "+wyplata);
+        }
+    }
+    class Programista:PracownikZadanie7
+    {
+        public double premia;
+        public override void Wyplata()
+        {
+            double wyplata = this.pensja * 4 - kwota + this.premia;
+            Console.WriteLine("Pensja podstawowa dla kazdego pracownika: " + wyplata);
+        }
+    }
+    //Zadanie 8
+    abstract class Samochod
+    {
+        public double predkosc;
+        public string paliwo;
+        public int drzwi;
+        public int kola;
+        abstract public void Jade();
+        abstract public void Przyczepa();
+        public virtual void Paliwo()
+        {
+            Console.WriteLine("Rodzaj paliwa: "+this.paliwo);
+        }
+        public virtual void Drzwi()
+        {
+            Console.WriteLine("Ilosc drzwi: "+this.drzwi);
+        }
+        public virtual void Kola()
+        {
+            Console.WriteLine("Liczba kol: "+this.kola);
+        }
+    }
+    class Ciezarowka : Samochod
+    {
+        public override void Jade()
+        {
+           
+            Console.WriteLine("Jestem ciezarowka");
+        }
+        public override void Przyczepa()
+        {
+            Console.WriteLine("Mam naczepe");
+        }
+        public override void Drzwi()
+        {
+            Console.WriteLine("Nie mam drzwi");
+        }
+    }
+    class Osobowka: Samochod
+    {
+        public override void Jade()
+        {
+
+            Console.WriteLine("Jestem Osobowka");
+        }
+        public override void Przyczepa()
+        {
+            Console.WriteLine("Nie mam naczepy");
+        }
+        public override void Kola()
+        {
+            Console.WriteLine("Nie mam kół");
+        }
+    }
+    class Hybryda : Samochod
+    {
+        public override void Jade()
+        {
+            Console.WriteLine("Jade bardzo szybko");
+        }
+
+        public override void Przyczepa()
+        {
+            Console.WriteLine("Jade duzo szybciej gdy nie mam przyczepy");
+        }
     }
     class Program
     {
