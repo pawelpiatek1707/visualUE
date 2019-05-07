@@ -181,6 +181,48 @@ namespace Interfejsy
             Console.WriteLine("Punkty studenta "+this.nazwisko+" do rekrutacji: "+punkty);
         }
     }
+    //Zadanie 7
+    public enum Tydzien
+    { poniedzialek=1,
+        wtorek,
+        sroda, czwartek,
+        piatek,
+        sobota,
+        niedziela
+
+    };
+    public enum TydzinSkrot
+    {
+        pon=1,
+        wt,
+        sr,
+        czw,
+        pt,
+        sob,
+        nd
+    }
+    public enum typTrasy {0.8,1,1.3};
+    //Zadanie 8
+    class SamochodZadanie8
+    {
+        public string  nrVin,Nazwa;
+        public int Rocznik;
+        public float srednieSpalanie, pojemnoscSilnika;
+        
+        public SamochodZadanie8(float pojemnoscSilnika, string nrVin, int rocznik,string nazwa,float srednieSpalanie)
+        {
+            this.pojemnoscSilnika = pojemnoscSilnika;
+            this.nrVin = nrVin;
+            this.Rocznik = rocznik;
+            this.Nazwa = nazwa;
+            this.srednieSpalanie = srednieSpalanie;
+        }
+        public void Create()
+        {
+            SamochodZadanie8 s1 = new SamochodZadanie8(1.9f, "asdfvc24432", 2008, "bmw", 6.0f);
+            SamochodZadanie8 s2 = new SamochodZadanie8(1.5f, "asdadsa4432", 2010, "hinda", 7.0f);
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -201,24 +243,36 @@ namespace Interfejsy
             //s1.Stoje();
             //s1.Wypisz();
             //Zadanie 6
-           // KandydatNaStudia[] tablicaKandydaci = new KandydatNaStudia[4];
-           // int liczbaStudentow = 2;
-           // for(int i = 0; i < liczbaStudentow; i++)
-           // {
-           //     Console.Write("Podaj nazwisko studenta: ");
-           //     tablicaKandydaci[i].nazwisko = Console.ReadLine();
-           //     Console.Write("Podaj punkty z matematyki: ");
-           //     tablicaKandydaci[i].punktyMatematyka = int.Parse(Console.ReadLine());
-           //     Console.Write("Podaj punkty z informatyki: ");
-           //     tablicaKandydaci[i].punktyInformatyka = int.Parse(Console.ReadLine());
-           //     Console.Write("Podaj punkty z jezyka: ");
-           //     tablicaKandydaci[i].punktyJezyk = int.Parse(Console.ReadLine());
-           // }
-           // Console.Clear();
-           //for(int i = 0; i<liczbaStudentow; i++)
-           // {
-           //     tablicaKandydaci[i].Punkkty();
-           // }
+            //int liczbaStudentow = 2;
+            //KandydatNaStudia[] tablicaKandydaci = new KandydatNaStudia[liczbaStudentow];
+
+            //for (int i = 0; i < liczbaStudentow; i++)
+            //{
+            //    Console.Write("Podaj nazwisko studenta: ");
+            //    tablicaKandydaci[i].nazwisko = Console.ReadLine();
+            //    Console.Write("Podaj punkty z matematyki: ");
+            //    tablicaKandydaci[i].punktyMatematyka = int.Parse(Console.ReadLine());
+            //    Console.Write("Podaj punkty z informatyki: ");
+            //    tablicaKandydaci[i].punktyInformatyka = int.Parse(Console.ReadLine());
+            //    Console.Write("Podaj punkty z jezyka: ");
+            //    tablicaKandydaci[i].punktyJezyk = int.Parse(Console.ReadLine());
+            //}
+            //Console.Clear();
+            //for (int i = 0; i < liczbaStudentow; i++)
+            //{
+            //    tablicaKandydaci[i].Punkkty();
+            //}
+            //Zadanie 7
+            Console.Write("Podaj dzien tygodnia : ");
+             string dzienString = Console.ReadLine();
+
+            int dzien = int.Parse(Console.ReadLine());
+            Tydzien aaa = Tydzien.dzien
+            Tydzien dzienTygodnia = (Tydzien)dzien;
+            TydzinSkrot dzienTygodaniSkrot = (TydzinSkrot)dzien;
+            Console.WriteLine(dzienTygodaniSkrot);
+
+
 
             Console.ReadKey();
         }
