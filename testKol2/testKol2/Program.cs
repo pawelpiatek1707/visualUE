@@ -140,6 +140,7 @@ namespace kolokwium2
             Console.WriteLine("Lekarz: " + this.lekarzRodzinny);
         }
     }
+    
     class Recepcjonista : IRecepcjonista
     {
         public string imie, nazwisko;
