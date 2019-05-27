@@ -4,13 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Serialization;using System.IO;using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;using System.IO;using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 
 namespace Zajecia_07._05._19
 {
+    //Zadanie 1
+    class Pudelka
+    {
+        public int x, y, z;
+
+      
+        public Pudelka(int x,int y,int z)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+          
+        }
+        public int Obj()
+        {
+            return this.x * this.y * this.z;
+        }
+
+        public static Pudelka operator + (Pudelka a, Pudelka b)
+        {
+            return new Pudelka(a.x+b.x,a.y+b.y,a.z+b.z);
+        }
+    }
+
+
+    
     //Zadanie 2
     public class Zadanie2<T>
+
     {
         T[] dane;
        
@@ -177,12 +204,29 @@ namespace Zajecia_07._05._19
             Console.WriteLine("Galop");
         }
     }
+    //Zadnaie 7
+    public class katalog
+    {
+        public class ksiazka
+        {
+            public string autor, tytul, rodzaj, data, opis;
+            public double cena;
+        }
 
+    }
+    
+    
 
 class Program
     {
         static void Main(string[] args)
         {
+            //Zadanie 1
+            //Pudelka p1 = new Pudelka(3, 4, 5);
+            //Pudelka p2 = new Pudelka(6, 7, 8);
+            //Pudelka wynik = p1 + p2;
+            //Console.WriteLine(wynik.Obj());
+
             //Zadanie 2
             //Zadanie2<int> tablica = new Zadanie2<int>(4);           
             //Zadanie2<string> tablica1 = new Zadanie2<string>(4);
@@ -210,25 +254,31 @@ class Program
             //z2 = BinarySerializer<Zadanie5>.Deserialize(path);
             //z2.Wyswietl();
             //Zadanie 6
-            Kon k1 = new Kon(1, "kon Rafał", "ogier", "czarny", "nieznany", "klacz", "23-03-2005", "Katowice", "Mikołowska 123 Katowice");
-            
-            k1.PrzedstawSie();
-            k1.Galop();
-            k1.Step();
-            k1.Klus();
-            XmlSerializer xs = new XmlSerializer(typeof(Kon));
-            Stream path = File.Create("kon1.xml");
-            xs.Serialize(path, k1);
+            //Kon k1 = new Kon(1, "kon Rafał", "ogier", "czarny", "nieznany", "klacz", "23-03-2005", "Katowice", "Mikołowska 123 Katowice");
 
-            Kon k2;
+            //k1.PrzedstawSie();
+            //k1.Galop();
+            //k1.Step();
+            //k1.Klus();
+            //XmlSerializer xs = new XmlSerializer(typeof(Kon));
+            //Stream path = File.Create("kon1.xml");
+            //xs.Serialize(path, k1);
 
-            XmlSerializer xd = new XmlSerializer(typeof(Kon));
-            Stream path1 = File.OpenRead("kon.xml");
-            k2 = (Kon)xd.Deserialize(path1);
-            Console.WriteLine("---------");
-            k2.PrzedstawSie();
+            //Kon k2;
 
+            //XmlSerializer xd = new XmlSerializer(typeof(Kon));
+            //Stream path1 = File.OpenRead("kon.xml");
+            //k2 = (Kon)xd.Deserialize(path1);
+            //Console.WriteLine("---------");
+            //k2.PrzedstawSie();
+            //Zadanie 7
 
+            XmlSerializer serializer = new XmlSerializer(typeof(List<katalog>));
+
+            using (FileStream stream = File.OpenRead("Zadanie_7_serializacja.xml"))
+            {
+                List<katalog> dezerializedList = (List<katalog>)serializer.Deserialize(stream);
+            }
 
 
 
