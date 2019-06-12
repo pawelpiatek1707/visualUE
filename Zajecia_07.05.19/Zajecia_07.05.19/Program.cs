@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Serialization;using System.IO;using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
+using System.Xml.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+
 
 namespace Zajecia_07._05._19
 {
