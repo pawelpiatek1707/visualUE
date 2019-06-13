@@ -146,9 +146,10 @@ namespace Przed_egzaminem_II_3
     class Program
     {
         public enum Kierunek {Brak=0, Lewo=1, Prawo=2, Gora=4, Dol=8 }; // po"=" przypisujemy wartość skojarzoną dla enum
-                                                                 // Wartość dla wartości skojarzonych domyślnie zaczyna sie od 0 i jest inkrementowana z każdym elementem
-                                                                 // Jeżeli chcemy składac enum to warto wartościom skojarzonym przypisywać wielokrotości 2
-                                                                 //Wartości skojarzone są domyślnie typu int. Można zmienić ta wartość
+                                                                        // Wartość dla wartości skojarzonych domyślnie zaczyna sie od 0 i jest inkrementowana z każdym elementem
+                                                                        // Jeżeli chcemy składac enum to warto wartościom skojarzonym przypisywać wielokrotości 2
+                                                                        //Wartości skojarzone są domyślnie typu int. Można zmienić ta wartość
+        
         static void Main(string[] args)
         {
             //1. Konstruktor statyczny
